@@ -1,0 +1,7 @@
+# FaceMorph — portable desktop app.
+# Runs natively on Windows (x64 & ARM64), macOS (Intel & Apple Silicon) and Linux.
+# No TensorFlow, no GPU, no WSL. Install once, then run FaceMorph.py.
+onnxruntime>=1.16
+customtkinter>=5.2
+Pillow>=9.0
+numpy>=1.21
