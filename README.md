@@ -17,24 +17,32 @@ face at the chosen gender while keeping it the **same person**.
 - **Load photo** — use your own picture
 - **Save** the morph, **export** a 7-step strip, or an animated **GIF**
 
-## 🚀 Run it (Windows · macOS · Linux — incl. Windows ARM & Apple Silicon)
-You only need **Python 3.9+**.
+## 🚀 Run it
 
+### ⭐ Windows — one click, no Python needed
+1. Download **[`FaceMorph.exe`](FaceMorph.exe)** (~76 MB): click the file above, then the **Download** button.
+2. Double-click it. Done — the app opens.
+
+> The model is baked into the `.exe`, so there is **nothing to install**: no Python, no `pip`.
+> First launch unpacks once and takes a few seconds. If Windows shows a blue **SmartScreen**
+> box ("Windows protected your PC"), click **More info → Run anyway** — it is our own unsigned
+> app, not a virus.
+
+### 🛠 macOS / Linux (or to run from the source)
+You need **Python 3.9+**:
 ```bash
-# 1. get the code (download ZIP or git clone)
-# 2. inside the folder:
 pip install -r requirements.txt
 python FaceMorph.py
 ```
-- **Windows:** double-click `Uruchom_Windows.bat`
-- **macOS:** double-click `Uruchom_macOS.command` (first time: right-click → Open)
+macOS: double-click `Uruchom_macOS.command` (first time: right-click → Open).
 
 A morph takes well under a second on a normal laptop CPU.
 
 ## 📦 What's inside
 | File | Purpose |
 |---|---|
-| `FaceMorph.py` | the GUI |
+| `FaceMorph.exe` | **one-click Windows app** — Python, libraries and the model all bundled |
+| `FaceMorph.py` | the GUI (source) |
 | `morph_onnx.py` | inference engine (ONNX Runtime) |
 | `generator.onnx` | the trained model |
 | `discriminator.onnx` | optional — auto-detects gender to set the slider start |
