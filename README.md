@@ -28,13 +28,14 @@ face at the chosen gender while keeping it the **same person**.
 > box ("Windows protected your PC"), click **More info → Run anyway** — it is our own unsigned
 > app, not a virus.
 
-### 🍎 macOS — one click
-1. Open the [**Releases**](../../releases) page and download the file for your Mac:
-   - **Apple Silicon** (M1 / M2 / M3): `FaceMorph-macOS-AppleSilicon.zip`
-   - **Intel** Mac: `FaceMorph-macOS-Intel.zip`
+### 🍎 macOS — one click (Apple Silicon)
+1. Open the [**Releases**](../../releases) page and download `FaceMorph-macOS-AppleSilicon.zip`
+   (for M1 / M2 / M3 Macs).
 2. Unzip, then **right-click `FaceMorph.app` → Open** the first time (the app is unsigned, so a plain
    double-click is blocked by Gatekeeper). If macOS calls it "damaged", run once in Terminal:
    `xattr -cr /path/to/FaceMorph.app`
+
+> On an older **Intel** Mac, use the "Run from the source" steps below.
 
 > The Mac and Windows apps are built automatically in the cloud (GitHub Actions) and published on the
 > Releases page, so they track the code. No Mac or build tools needed on your side.

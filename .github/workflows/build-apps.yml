@@ -3,7 +3,7 @@ name: Build one-click apps
 # Builds the double-click apps in the cloud (no Mac/PC needed locally) and
 # publishes them on the Releases page:
 #   - Windows : FaceMorph-Windows.exe
-#   - macOS   : FaceMorph-macOS-AppleSilicon.zip  /  FaceMorph-macOS-Intel.zip
+#   - macOS   : FaceMorph-macOS-AppleSilicon.zip  (Apple Silicon)
 # Runs on every push that touches the app, and can be started by hand from the
 # Actions tab (Run workflow).
 
@@ -37,10 +37,8 @@ jobs:
           - os: windows-latest
             name: Windows
             asset: FaceMorph-Windows.exe
-          - os: macos-13            # Intel Macs
-            name: macOS-Intel
-            asset: FaceMorph-macOS-Intel.zip
-          - os: macos-14            # Apple Silicon (M1/M2/M3)
+          - os: macos-14            # Apple Silicon (M1/M2/M3). Intel (macos-13) dropped:
+                                    # GitHub is retiring Intel runners and they hang in the queue.
             name: macOS-AppleSilicon
             asset: FaceMorph-macOS-AppleSilicon.zip
     steps:
@@ -114,7 +112,7 @@ jobs:
             - **Windows:** `FaceMorph-Windows.exe` — double-click. If a blue SmartScreen box
               appears, click *More info -> Run anyway* (it is our own unsigned app).
             - **macOS, Apple Silicon (M1/M2/M3):** `FaceMorph-macOS-AppleSilicon.zip`
-            - **macOS, Intel:** `FaceMorph-macOS-Intel.zip`
+            - **Intel Mac / Linux:** run from the source (see the repo README).
 
             On macOS: unzip, then **right-click `FaceMorph.app` -> Open** the first time (the app is
             unsigned, so a plain double-click is blocked). If macOS says it is "damaged", run once in
