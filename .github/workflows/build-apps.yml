@@ -21,10 +21,15 @@ on:
 permissions:
   contents: write          # needed to publish the Release
 
+concurrency:
+  group: build-apps        # a new push cancels an in-progress run (frees a stuck job)
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Build ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 20      # kill a hung build so it cannot block the release for hours
     strategy:
       fail-fast: false
       matrix:
